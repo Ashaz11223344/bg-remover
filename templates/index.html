@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Background Remover</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<div class="loader-overlay" id="loader">
+    <div class="spinner"></div>
+    <p>Removing background...</p>
+</div>
+
+<div class="container">
+    <h1>Background Remover</h1>
+
+<form method="POST" enctype="multipart/form-data" id="uploadForm" onsubmit="showLoader()">
+
+
+        <!-- DROP AREA -->
+        <div class="drop-area" id="drop-area">
+            <p id="upload-text">Drag & Drop Image Here</p>
+            <span>or</span>
+
+            <label class="upload-btn">
+                Select Image
+                <input type="file" name="image" id="fileInput" accept="image/*" hidden required>
+            </label>
+        </div>
+
+        <!-- INPUT PREVIEW -->
+        <div class="preview-box" id="preview-box" style="display:none;">
+            <img id="preview-img">
+            <p class="success-text">Image uploaded successfully ✅</p>
+        </div>
+
+        <!-- RENAME OPTION -->
+        <input
+            type="text"
+            name="custom_name"
+            placeholder="Optional output file name"
+            class="rename-input"
+        >
+
+        <button type="submit">Remove Background</button>
+    </form>
+
+    <!-- OUTPUT PREVIEW -->
+    {% if output_image %}
+    <div class="preview-box">
+        <img src="{{ output_image }}">
+        <p class="success-text">Background removed successfully 🎉</p>
+
+        <a href="{{ output_image }}" download class="upload-btn">
+            Download Image
+        </a>
+    </div>
+    {% endif %}
+
+</div>
+
+<script src="/static/js/script.js"></script>
+</body>
+</html>

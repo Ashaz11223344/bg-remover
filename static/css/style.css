@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+:root {
+    --ink-black: #0d1b2aff;
+    --prussian-blue: #1b263bff;
+    --dusk-blue: #415a77ff;
+    --dusty-denim: #778da9ff;
+    --alabaster-grey: #e0e1ddff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+  font-family: "Electrolize";
+    background: var(--ink-black);
+    color: var(--alabaster-grey);
+}
+
+.container {
+    max-width: 420px;
+    margin: 40px auto;
+    background: var(--prussian-blue);
+    padding: 22px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: var(--alabaster-grey);
+}
+
+.drop-area {
+    border: 2px dashed var(--dusty-denim);
+    padding: 28px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.drop-area:hover {
+    border-color: var(--alabaster-grey);
+}
+
+.drop-area p {
+    margin: 0;
+    font-size: 15px;
+}
+
+.drop-area span {
+    display: block;
+    margin: 10px 0;
+    color: var(--dusty-denim);
+}
+
+.upload-btn {
+    display: inline-block;
+    background: var(--dusk-blue);
+    color: var(--alabaster-grey);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.upload-btn:hover {
+    background: var(--dusty-denim);
+    color: var(--ink-black);
+}
+p {
+  font-family: "Electrolize", sans-serif;
+}
+button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px;
+    background: var(--alabaster-grey);
+    color: var(--ink-black);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+      font-family: "Electrolize", sans-serif;
+}
+
+button:hover {
+    background: var(--dusty-denim);
+}
+
+.rename-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: var(--alabaster-grey);
+    color: var(--ink-black);
+}
+
+.preview-box {
+    margin-top: 16px;
+}
+
+.preview-box img {
+    max-width: 50%;
+    border-radius: 12px;
+    margin-bottom: 6px;
+}
+
+.success-text {
+    font-size: 13px;
+    color: var(--alabaster-grey);
+}
+
+/* LOADER */
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(13, 27, 42, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.spinner {
+    width: 52px;
+    height: 52px;
+    border: 5px solid var(--dusty-denim);
+    border-top: 5px solid var(--alabaster-grey);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader-overlay p {
+    margin-top: 12px;
+    color: var(--alabaster-grey);
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
